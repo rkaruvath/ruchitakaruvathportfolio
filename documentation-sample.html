@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>End-user Documentation Sample | Your Name</title>
+<meta name="description" content="A task-based user guide sample with steps, callouts, and code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="banner">
+<img src="images/banner.jpg" alt="Abstract network of glowing nodes and connecting lines on a dark background">
+</header>
+<nav class="topnav" aria-label="Main navigation"><ul class="nav-list">
+<li><a href="about.html">About me</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li class="dropdown"><button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="work-menu">Work samples
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg></button>
+<ul class="dropdown-menu" id="work-menu" hidden>
+<li><a href="documentation-sample.html">End-user documentation sample</a></li>
+<li><a href="rest-api-documentation-sample.html">REST API documentation sample</a></li>
+<li><a href="infographics-sample.html">Infographic sample</a></li>
+</ul></li></ul></nav>
+<div class="main">
+<main class="content" id="main">
+<h1>End-user Documentation Sample</h1>
+<p class="lead">A task-based user guide for a fictional file-sync app, written to help new users finish setup in under five minutes.</p>
+<section class="panel"><h2>Project details</h2>
+<p><strong>Role:</strong> Sole writer. I interviewed the product team, tested the app, and wrote and edited the guide.</p>
+<p><strong>Tools used:</strong></p><ul class="meta-row"><li class="chip">Markdown</li><li class="chip">Git</li><li class="chip">Figma</li></ul></section>
+<h2>Sample: Connect a folder to SyncBox</h2>
+<h3>Before you begin</h3>
+<p>You need a SyncBox account and version 2.4 or later of the desktop app.</p>
+<h3>Steps</h3>
+<ol class="steps">
+<li>Open SyncBox and select <strong>Settings</strong>.</li>
+<li>Select <strong>Folders</strong>, then <strong>Add folder</strong>.</li>
+<li>Choose the folder you want to sync and select <strong>Connect</strong>.</li>
+<li>Wait for the status icon to show a green check mark.</li></ol>
+<div class="callout"><strong>Note</strong>Syncing starts automatically. Large folders can take several minutes.</div>
+<div class="callout warning"><strong>Warning</strong>Disconnecting a folder deletes its cloud copy after 30 days. Download any files you need first.</div>
+<p>To check sync status from the command line, run:</p>
+<pre><code>syncbox status --folder ~/Documents</code></pre>
+</main>
+<footer class="site-footer"><p>Get in touch</p><ul>
+<li><a href="https://www.linkedin.com/in/your-profile" rel="noopener">LinkedIn</a></li>
+</ul></footer>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
