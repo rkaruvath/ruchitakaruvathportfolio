@@ -11,8 +11,8 @@ A static portfolio built with HTML, CSS, and vanilla JavaScript for GitHub Pages
 ## How to customize
 - **Name and title:** search all `.html` files for `Your Name` and `Technical Writer` (left column of the About page and page titles).
 - **Bio:** edit `about.html` and `index.html` (keep them identical).
-- **Skills and tools:** edit `portfolio.html`.
-- **LinkedIn link:** edit the footer in every HTML file.
+- **Skills and tools:** edit `skills.html`.
+- **LinkedIn icon link:** edit the link in the left column of `about.html` and `index.html`.
 - **Work samples:** edit the content inside `<main>` in the three sample pages.
 - **Colors and spacing:** change the variables at the top of `css/styles.css`.
 - **Banner image:** replace `images/banner.jpg` with your own image (keep the same file name).

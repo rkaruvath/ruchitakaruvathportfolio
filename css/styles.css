@@ -59,6 +59,8 @@ p,ul,ol{max-width:70ch} a{color:var(--accent)}
 .about-grid{display:grid;grid-template-columns:260px 1fr;gap:var(--sp-5);align-items:start}
 .profile{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--sp-4);text-align:center}
 .profile .avatar{margin:0 auto var(--sp-3)}
+.social{display:inline-flex;color:var(--accent);margin-bottom:var(--sp-3);border-radius:4px}
+.social:hover{opacity:.8}
 .profile-name{font-family:var(--font-head);font-size:1.35rem;margin:0}
 .profile-role{margin:var(--sp-1) 0 var(--sp-3);color:var(--muted)}
 .profile p:last-child{margin:0}
