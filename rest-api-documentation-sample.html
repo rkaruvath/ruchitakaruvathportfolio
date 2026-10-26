@@ -44,13 +44,13 @@
 <tr><td><code>Content-Type</code></td><td>application/json</td></tr></tbody></table></div>
 <h4>Request body parameters</h4>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>book_id</code></td><td>summary</td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>expand</code></td><td>impact</td><td>integer</td><td>No</td><td>Impact of the change on the service level of the affected business processes.<p>The following are the supported values:</p><ul><li>1000: Extensive/Widespread</li><li>2000: Significant/Large</li><li>3000: Moderate/Limited</li><li>(Default) 4000: Minor/Localized</li></ul></td></tr></tbody></table></div>
-<tr><td><code>book_id</code></td><td>urgency</td><td>string</td><td>No</td><td>Urgency measures how soon the change will significantly impact the business.<p>For example, a high-impact change may have low urgency if the impact is not expected to affect the business in the near future.<p>The following are the supported values:</p><ul><li>1000: Critical</li><li>2000: High</li><li>3000: Medium</li><li>(Default) 4000: Low</li></ul></td></tr>
-<tr><td><code>book_id</code></td><td>summary</td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>book_id</code></td><td>summary</td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>book_id</code></td><td>summary</td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>book_id</code></td><td>summary</td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
+<tr><td><code>summary</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
+<tr><td><code>impact</code></td><td>integer</td><td>No</td><td>Impact of the change on the service level of the affected business processes.<p>The following are the supported values:</p><ul><li>1000: Extensive/Widespread</li><li>2000: Significant/Large</li><li>3000: Moderate/Limited</li><li>(Default) 4000: Minor/Localized</li></ul></td></tr></tbody></table></div>
+<tr><td><code>urgency</code></td><td></td><td>string</td><td>No</td><td>Urgency measures how soon the change will significantly impact the business.<p>For example, a high-impact change may have low urgency if the impact is not expected to affect the business in the near future.<p>The following are the supported values:</p><ul><li>1000: Critical</li><li>2000: High</li><li>3000: Medium</li><li>(Default) 4000: Low</li></ul></td></tr>
+<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
+<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
+<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
+<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
 <h3>Example request</h3>
 <pre><code>curl -X GET "https://api.example.com/v1/books/bk_123?expand=author" \
   -H "Authorization: Bearer YOUR_API_KEY"</code></pre>
