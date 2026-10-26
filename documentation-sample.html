@@ -27,24 +27,22 @@
 </ul></li></ul></nav>
 <div class="main">
 <main class="content" id="main">
-<h1>End-user Documentation Sample</h1>
-<p class="lead">A task-based user guide for a fictional file-sync app, written to help new users finish setup in under five minutes.</p>
-<section class="panel"><h2>Project details</h2>
-<p><strong>Role:</strong> Sole writer. I interviewed the product team, tested the app, and wrote and edited the guide.</p>
-<p><strong>Tools used:</strong></p><ul class="meta-row"><li class="chip">Markdown</li><li class="chip">Git</li><li class="chip">Figma</li></ul></section>
-<h2>Sample: Connect a folder to SyncBox</h2>
-<h3>Before you begin</h3>
-<p>You need a SyncBox account and version 2.4 or later of the desktop app.</p>
-<h3>Steps</h3>
+<h1>End-user documentation sample</h1>
+<p class="lead">Technical documentation for a fictional feature.</p>
+<h2>Enabling Agentic chat for ITSM</h2>
+<p>As an administrator, you can enable Agentic chat for the ITSM application. Agentic chat uses the advanced AI capabilities of GPT Manager to augment the global search, which is a full-text search in ITSM, with an AI-powered, chat-based search.</p>
+<p>While working on incidents tickets in ITSM, service desk agents can use Agentic chat for a conversational, AI-driven experience to search for incident resolution information from knowledge articles. Instead of manually searching for information, service desk agents can ask specific questions in Agentic chat and get relevant, summarized answers. Thereby, leading to faster incident analysis and resolution.</p>
+<h3>To enable Agentic chat for ITSM</h3>
 <ol class="steps">
-<li>Open SyncBox and select <strong>Settings</strong>.</li>
-<li>Select <strong>Folders</strong>, then <strong>Add folder</strong>.</li>
-<li>Choose the folder you want to sync and select <strong>Connect</strong>.</li>
-<li>Wait for the status icon to show a green check mark.</li></ol>
-<div class="callout"><strong>Note</strong>Syncing starts automatically. Large folders can take several minutes.</div>
-<div class="callout warning"><strong>Warning</strong>Disconnecting a folder deletes its cloud copy after 30 days. Download any files you need first.</div>
-<p>To check sync status from the command line, run:</p>
-<pre><code>syncbox status --folder ~/Documents</code></pre>
+<li>In Mid Tier, open the <strong>AR System Configuration Generic UI</strong> form.</li>
+<li>Set the <strong>enableAgenticChat</strong> parameter to <strong>true</strong>.</li>
+<h3>To set the default search mode to Agentic chat or global search</h3>
+<p>After you enable Agentic chat, you can set the default search mode to Agentic chat or global search.</p>
+<ol class="steps">
+<li>In Mid Tier, open the <strong>AR System Configuration Generic UI</strong> form.</li>
+<li>Set the <strong>GlobalSearchDefaultMode</strong> parameter to one of the following options:
+<ul><li><strong>search</strong>: To set the default search mode to global search. The default value is <strong>search</strong>.</li>
+<li><strong>chat</strong>: To set the default search mode to Agentic chat.</li></ul>
 </main>
 </div>
 <script src="js/main.js"></script>
