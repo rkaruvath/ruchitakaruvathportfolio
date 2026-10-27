@@ -35,44 +35,127 @@
 <p></p><p>The Change Management API is organized around REST. It uses JSON for requests and responses, and standard HTTP status codes. Authenticate by sending your API key in the <code>Authorization</code> header.</p>
 <p><strong>Base URL:</strong> <code>https://api.example.com/v1</code></p></section>
 <h2>Create a change request</h2>
-<div class="endpoint"><span class="badge get">POST</span><code>/change</code></div>
+<div class="endpoint"><span class="badge post">POST</span><code>/change</code>
+<p>Request URL: <baseurl>/change</p></div>
 <p>Creates a new change request.</p>
-<h3>Request</h3>
-<h4>Header parameters</h4>
+<h3>Header parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Authorization</code></td><td>Authorization: Bearer <token></td></tr>
 <tr><td><code>Content-Type</code></td><td>application/json</td></tr></tbody></table></div>
-<h4>Request body parameters</h4>
+<h3>Request body parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>summary</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
 <tr><td><code>impact</code></td><td>integer</td><td>No</td><td>Impact of the change on the service level of the affected business processes.<p>The following are the supported values:</p><ul><li>1000: Extensive/Widespread</li><li>2000: Significant/Large</li><li>3000: Moderate/Limited</li><li>(Default) 4000: Minor/Localized</li></ul></td></tr></tbody></table></div>
-<tr><td><code>urgency</code></td><td></td><td>string</td><td>No</td><td>Urgency measures how soon the change will significantly impact the business.<p>For example, a high-impact change may have low urgency if the impact is not expected to affect the business in the near future.<p>The following are the supported values:</p><ul><li>1000: Critical</li><li>2000: High</li><li>3000: Medium</li><li>(Default) 4000: Low</li></ul></td></tr>
-<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>book_id</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<h3>Example request</h3>
-<pre><code>curl -X GET "https://api.example.com/v1/books/bk_123?expand=author" \
-  -H "Authorization: Bearer YOUR_API_KEY"</code></pre>
-<h3>Example response</h3>
+<tr><td><code>urgency</code></td><td></td><td>integer</td><td>No</td><td>Urgency measures how soon the change will significantly impact the business.<p>For example, a high-impact change may have low urgency if the impact is not expected to affect the business in the near future.<p>The following are the supported values:</p><ul><li>1000: Critical</li><li>2000: High</li><li>3000: Medium</li><li>(Default) 4000: Low</li></ul></td></tr>
+<tr><td><code>priority</code></td><td>integer</td><td>No</td><td>Priority is the relative importance of the change. Priority is based on the impact and urgency of the change.<p>The following are the supported values:</p><ul><li>1: Critical</li><li>2: High</li><li>3: Medium</li><li>(Default) 4: Low</li></ul></td></tr>
+<tr><td><code>risk level</code></td><td>integer</td><td>No</td><td>The anticipated risk for the change.<p>For example, if a critical security update needs to be installed on all computers during business hours, the risk level can be 4 or 5. However, if it can be installed during non-business hours, the risk level can be 2.</p><p>The following are the supported values:</p><ul><li>1: Minimal (lowest risk)</li><li>2: Low</li><li>3: Medium</li><li>4: High</li><li>5: Extreme (highest risk)</li></ul></td></tr>
+<tr><td><code>status</code></td><td>integer</td><td>No</td><td>The current state of the change request.<p>The following are the supported values:</p><ul><li> (Default) 0: Draft</li><li>1: Request For Authorization</li><li>2: Planning In Progress</li><li>3: Scheduled For Review</li><li>4: Scheduled For Approval</li><li>5: Scheduled</li><li>6: Implementation In Progress</li><li>7: Pending</li><li>8: Rejected</li><li>9: Completed</li><li>10: Closed</li><li>11: Cancelled</li></ul></td></tr>
+<tr><td><code>locationCompany</code></td><td>string</td><td>No</td><td>The location where the change needs to be implemented.</td></tr>
+<tr><td><code>requestedFor.loginId</code></td><td>string</td><td>No</td><td>The login ID of the user initiating the change request.</td></tr>
+<tr><td><code>coordinator.loginId</code></td><td>string</td><td>No</td><td>The login ID of the change coordinator to be assigned the change request.</td></tr>
+<tr><td><code>changeManager.loginId</code></td><td>string</td><td>No</td><td>The login ID of the change manager monitoring the change request.</td></tr></tbody></table></div>
+<h3>Example request schema</h3>
 <pre><code>{
-  "id": "bk_123",
-  "title": "The Pragmatic Writer",
-  "isbn": "978-0-00-000000-0",
-  "available": true,
-  "author": { "id": "au_45", "name": "Alex Rivera" }
+    "summary": "Change created from API",
+    "impact": 4000,
+    "urgency": 1000,
+    "status": 0,
+    "locationCompany": "location_1",
+    "requestedFor": {
+        "loginId": "dev_1"
+    },
+    "coordinator": {
+        "loginId": "coord_1"
+    },
+    "changeManager": {
+        "loginId": "manager_1"
+    }
 }</code></pre>
-<h3>Response codes</h3>
-<div class="table-wrap"><table><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody>
-<tr><td><code>200</code></td><td>The book was returned.</td></tr>
-<tr><td><code>401</code></td><td>The API key is missing or invalid.</td></tr>
-<tr><td><code>404</code></td><td>No book exists with that ID.</td></tr>
-<tr><td><code>429</code></td><td>Too many requests. Retry after the time in the <code>Retry-After</code> header.</td></tr></tbody></table></div>
-<h2>Create a book</h2>
-<div class="endpoint"><span class="badge post">POST</span><code>/books</code></div>
-<p>Adds a book to the catalog. Send <code>title</code> and <code>isbn</code> in the JSON body. A successful call returns <code>201</code> with the new book.</p>
+<h4>Example request</h4>
+<pre><code>curl -X POST "https://api.example.com/change" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "summary": "Change created from API",
+    "impact": 4000,
+    "urgency": 1000,
+    "status": 0,
+    "locationCompany": "location_1",
+    "requestedFor": {
+      "loginId": "dev_1"
+    },
+    "coordinator": {
+      "loginId": "coord_1"
+    },
+    "changeManager": {
+      "loginId": "manager_1"
+    }
+  }'</code></pre>
+<h3>Example response</h3>
+<p>If a change request is successfully created, the API returns an HTTP 201 Created status code with the following JSON object:</p>
+<pre><code>{
+    "status": "Record created Successfully",
+    "details": {
+        "requestId": "CRQ000000000212",
+        "guid": "AGGITSFNDMBO7AS40MSLS40MSLB3HN",
+        "id": "CRQ000000000331"
+    }
+}</code></pre>
+<h3>Status codes</h3>
+<div class="table-wrap"><table><thead><tr><th>Status code</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>201 Created</code></td><td>The resource is created successfully.</td></tr>
+<tr><td><code>400 Bad request</code></td><td>One or more fields contain invalid values.</td></tr>
+<tr><td><code>403 Unauthorized</code></td><td>The authentication credentials are incorrect or missing.</td></tr>
+<tr><td><code>500 Internal server error</code></td><td>The server encountered an unexpected error and couldn’t complete the request.</td></tr></tbody></table></div>
+<h2>Show a change request</h2>
+<div class="endpoint"><span class="badge get">GET</span><code>/change/{id}</code>
+<p>Request URL: <baseurl>/change/{id}</p></div>
+<p>Shows a change request by ID.</p>
 </main>
 </div>
+<h3>Header parameters</h3>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>Authorization</code></td><td>Authorization: Bearer <token></td></tr>
+<tr><td><code>Accept</code></td><td>application/json</td></tr></tbody></table></div>
+<h3>Path parameters</h3>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>id</code></td><td>Unique identifier of the change request to be retrieved.For example: CRQ000000000001.</td></tr></tbody></table></div>
+<h3>Example request</h3>
+<pre><code>curl -X GET "https://api.example.com/change/CRQ5027801018" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"</code></pre>
+<H3>Example response</H3>
+<pre><code>{
+    "status": "Success",
+    "recordCount": 1,
+    "details": {
+        "id": "CRQ000000000319",
+        "summary": "Database change",
+        "createDate": "2024-05-28T11:43:23.000Z",
+        "modifiedDate": "2024-05-29T06:45:18.000Z",
+        "status": 3,
+        "priority": 3,
+        "impact": 4000,
+        "urgency": 4000,
+        "launchUrl": "http://{Host}:{Port}/smartit/app/#/change/DIGITSFNDMBOTAS4HBVS4HBVAJV2",
+        "targetDate": "2024-05-30T18:30:00.000Z",
+        "class": 4000,
+        "requestedFor": {
+            "loginId": "dev_1"
+        },
+        "coordinator": {
+            "loginId": "coord_1"
+        },
+        "changeManager": {
+            "loginId": "manager_1"
+        }
+    }
+}</code></pre>  
+<h3>Status codes</h3>
+<div class="table-wrap"><table><thead><tr><th>Status code</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>200 OK</code></td><td>The resource is retrieved successfully.</td></tr>
+<tr><td><code>403 Unauthorized</code></td><td>The authentication credentials are incorrect or missing.</td></tr>
+<tr><td><code>404 Not found</code></td><td>The requested resource does not exist.</td></tr>
+<tr><td><code>500 Internal server error</code></td><td>The server encountered an unexpected error and couldn’t complete the request.</td></tr></tbody></table></div>
 <script src="js/main.js"></script>
 </body>
 </html>
