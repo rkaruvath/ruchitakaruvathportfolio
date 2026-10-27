@@ -32,11 +32,11 @@
 <section class="panel">
 <h2>Change Management REST API</h2>
 <p>Use Change Management to plan, schedule, implement, and manage changes to the technology environment in your organization. For example, plan, schedule, and manage data migration tasks.</p>
-<p></p><p>The Change Management API is organized around REST. It uses JSON for requests and responses, and standard HTTP status codes. Authenticate by sending your API key in the <code>Authorization</code> header.</p>
+<p>The Change Management API is organized around REST. It uses JSON for requests and responses, and standard HTTP status codes. Authenticate by sending your API key in the <code>Authorization</code> header.</p>
 <p><strong>Base URL:</strong> <code>https://api.example.com/v1</code></p></section>
 <h2>Create a change request</h2>
-<div class="endpoint"><span class="badge post">POST</span><code>/change</code>
-<p>Request URL: <baseurl>/change</p></div>
+<div class="endpoint"><span class="badge post">POST</span><code>/change</code><br><p>Request URL: &lt;baseurl&#62;/change</p></div>
+<div>Request URL: &lt;baseurl&#62;/change</div>
 <p>Creates a new change request.</p>
 <h3>Header parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
@@ -45,7 +45,7 @@
 <h3>Request body parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>summary</code></td><td>string</td><td>Yes</td><td>Summary for the change request.</td></tr>
-<tr><td><code>impact</code></td><td>integer</td><td>No</td><td>Impact of the change on the service level of the affected business processes.<p>The following are the supported values:</p><ul><li>1000: Extensive/Widespread</li><li>2000: Significant/Large</li><li>3000: Moderate/Limited</li><li>(Default) 4000: Minor/Localized</li></ul></td></tr></tbody></table></div>
+<tr><td><code>impact</code></td><td>integer</td><td>No</td><td>Impact of the change on the service level of the affected business processes.<p>The following are the supported values:</p><ul><li>1000: Extensive/Widespread</li><li>2000: Significant/Large</li><li>3000: Moderate/Limited</li><li>(Default) 4000: Minor/Localized</li></ul></td></tr>
 <tr><td><code>urgency</code></td><td></td><td>integer</td><td>No</td><td>Urgency measures how soon the change will significantly impact the business.<p>For example, a high-impact change may have low urgency if the impact is not expected to affect the business in the near future.<p>The following are the supported values:</p><ul><li>1000: Critical</li><li>2000: High</li><li>3000: Medium</li><li>(Default) 4000: Low</li></ul></td></tr>
 <tr><td><code>priority</code></td><td>integer</td><td>No</td><td>Priority is the relative importance of the change. Priority is based on the impact and urgency of the change.<p>The following are the supported values:</p><ul><li>1: Critical</li><li>2: High</li><li>3: Medium</li><li>(Default) 4: Low</li></ul></td></tr>
 <tr><td><code>risk level</code></td><td>integer</td><td>No</td><td>The anticipated risk for the change.<p>For example, if a critical security update needs to be installed on all computers during business hours, the risk level can be 4 or 5. However, if it can be installed during non-business hours, the risk level can be 2.</p><p>The following are the supported values:</p><ul><li>1: Minimal (lowest risk)</li><li>2: Low</li><li>3: Medium</li><li>4: High</li><li>5: Extreme (highest risk)</li></ul></td></tr>
