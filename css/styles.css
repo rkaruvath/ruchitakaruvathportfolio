@@ -93,12 +93,12 @@ th{background:var(--accent-soft)}
 /* ===== Infographics ===== */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--sp-4);padding:0;list-style:none;max-width:none}
 .thumb{display:block;width:100%;padding:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:var(--surface)}
-.thumb svg{display:block;width:100%;height:auto}
+.thumb img{display:block;width:100%;height:auto}
 figcaption{padding:var(--sp-2) 0;color:var(--muted);font-size:.92rem}
 figure{margin:0}
 .lightbox{position:fixed;inset:0;background:rgba(5,10,16,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:var(--sp-4);z-index:200;cursor:zoom-out}
-.lightbox svg{max-width:min(90vw,820px);max-height:75vh;width:100%;height:auto;border-radius:var(--radius)}
+.lightbox img{max-width:min(90vw,820px);max-height:75vh;width:100%;height:auto;object-fit:contain;border-radius:var(--radius)}
 .lightbox p{color:#fff;margin-top:var(--sp-3)}
 .lightbox-close{position:absolute;top:var(--sp-3);right:var(--sp-3);background:#fff;color:#000;border:0;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer}
 
