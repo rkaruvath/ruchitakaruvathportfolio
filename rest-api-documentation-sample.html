@@ -28,15 +28,14 @@
 <div class="main">
 <main class="content" id="main">
 <h1>REST API documentation sample</h1>
-<p class="lead">Reference documentation for the fictional Change Management API, which manages a change requests.</p>
+<p class="lead">Reference documentation of a fictional Change Management REST API for managing change requests.</p>
 <section class="panel">
 <h2>Change Management REST API</h2>
-<p>Use Change Management to plan, schedule, implement, and manage changes to the technology environment in your organization. For example, plan, schedule, and manage data migration tasks.</p>
-<p>The Change Management API is organized around REST. It uses JSON for requests and responses, and standard HTTP status codes. Authenticate by sending your API key in the <code>Authorization</code> header.</p>
-<p><strong>Base URL:</strong> <code>https://api.example.com/v1</code></p></section>
+<p>Use the Change Management API to manage changes to the technology environment in your organization. For example, plan, schedule, and manage data migration tasks.</p>
+<p>The Change Management API is organized around REST. It uses JSON for requests and responses, and standard HTTP status codes. Authenticate to this API by sending your API key in the <code>Authorization</code> header.</p>
+<p>Base URL: <code>https://api.example.com/v1</code></p></section>
 <h2>Create a change request</h2>
-<div class="endpoint"><span class="badge post">POST</span><code>/change</code><br><p>Request URL: &lt;baseurl&#62;/change</p></div>
-<div>Request URL: &lt;baseurl&#62;/change</div>
+<div class="endpoint"><span class="badge post">POST</span><code>/change</code><p>Request URL: &lt;baseurl&#62;/change</p></div>
 <p>Creates a new change request.</p>
 <h3>Header parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
@@ -108,8 +107,7 @@
 <tr><td><code>403 Unauthorized</code></td><td>The authentication credentials are incorrect or missing.</td></tr>
 <tr><td><code>500 Internal server error</code></td><td>The server encountered an unexpected error and couldn’t complete the request.</td></tr></tbody></table></div>
 <h2>Show a change request</h2>
-<div class="endpoint"><span class="badge get">GET</span><code>/change/{id}</code><br>
-<p>Request URL: <baseurl>/change/{id}</p></div>
+<div class="endpoint"><span class="badge get">GET</span><code>/change/{id}</code><p>Request URL: <baseurl>/change/{id}</p></div>
 <p>Shows a change request by ID.</p>
 <h3>Header parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
@@ -155,8 +153,7 @@
 <tr><td><code>404 Not found</code></td><td>The requested resource does not exist.</td></tr>
 <tr><td><code>500 Internal server error</code></td><td>The server encountered an unexpected error and couldn’t complete the request.</td></tr></tbody></table></div>
 <h2>Update a change request</h2>
-<div class="endpoint"><span class="badge post">POST</span><code>/change/{id}</code><br>
-<p>Request URL: <baseurl>/change/{id}</p></div>
+<div class="endpoint"><span class="badge patch">Patch</span><code>/change/{id}</code><p>Request URL: <baseurl>/change/{id}</p></div>
 <h3>Header parameters</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Authorization</code></td><td>Authorization: Bearer <token></td></tr>
