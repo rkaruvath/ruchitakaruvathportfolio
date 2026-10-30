@@ -89,7 +89,7 @@ th{background:var(--accent-soft)}
 .endpoint{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--sp-3)}
 .endpoint p { flex-basis: 100%; margin: 0; }
 .badge{font-family:var(--font-mono);font-weight:700;font-size:.85rem;padding:.25rem .65rem;border-radius:4px;color:#fff}
-.badge.get{background:#1b6e3a}.badge.post{background:#8a4b00}
+.badge.get{background:#1b6e3a}.badge.post{background:#8a4b00}.badge.patch{background:#8250df}
 
 /* ===== Infographics ===== */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--sp-4);padding:0;list-style:none;max-width:none}
